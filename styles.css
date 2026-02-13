@@ -56,6 +56,11 @@ body {
     gap: 2rem;
 }
 
+/* Fallback for browsers that don't support `gap` on flex containers (older Firefox):
+   add left margin to list items and reset the first item. */
+.nav-links > li { margin-left: 2rem; }
+.nav-links > li:first-child { margin-left: 0; }
+
 .nav-toggle {
     display: none;
     background: transparent;
@@ -149,6 +154,11 @@ body {
     align-items: center;
     background: transparent;
 }
+
+/* Allow flex children to shrink correctly in Firefox (prevents unexpected wrapping).
+   Firefox applies a default min-width:auto which can force wrapping; setting
+   min-width:0 allows the flex item to shrink below its content size. */
+.hero-copy, .hero-media { min-width: 0; }
 
 .hero-image {
     max-width: 100%;
