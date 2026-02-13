@@ -3,29 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanatani Rituals - Sacred Traditions</title>
+    <title>Sanatan Dharma — Timeless Wisdom for Modern Life</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">🕉️ Sanatani Rituals</div>
-            <ul class="nav-links">
+            <div class="logo"><img src="assets/images/logo.svg" alt="Sanatan Dharma logo" height="36"> Sanatan Dharma</div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul id="navLinks" class="nav-links">
                 <li><a href="#/" class="nav-link">Home</a></li>
-                <li><a href="#/rituals" class="nav-link">Rituals</a></li>
-                <li><a href="#/daily-practices" class="nav-link">Daily Practices</a></li>
+                <li><a href="#/teachings" class="nav-link">Teachings</a></li>
+                <li><a href="#/practices" class="nav-link">Practices</a></li>
                 <li><a href="#/festivals" class="nav-link">Festivals</a></li>
                 <li><a href="#/about" class="nav-link">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <div id="app" class="app-container">
-        <!-- Pages will be rendered here -->
-    </div>
+    <main id="app" class="app-container">
+        <section class="hero page">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1>Sanatan Dharma</h1>
+                    <p class="tagline">Timeless wisdom, living traditions — a guide to meaning and practice.</p>
+                    <p><a class="cta" href="#/teachings">Explore Teachings</a> <a class="cta secondary" href="#/practices">Daily Practices</a></p>
+                </div>
+                <div class="hero-media">
+                    <img src="assets/images/gk_hero.png" alt="Sanatan Dharma illustration" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="section page">
+            <h2>Featured</h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-icon"><img src="assets/images/card1.svg" alt="teachings" width="48"></div>
+                    <h3>Core Teachings</h3>
+                    <p>Discover the essential philosophies, stories, and practices that form the heart of Sanatan Dharma.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><img src="assets/images/card2.svg" alt="practices" width="48"></div>
+                    <h3>Daily Practices</h3>
+                    <p>Simple, meaningful routines and rituals you can adapt to modern life.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><img src="assets/images/card3.svg" alt="festivals" width="48"></div>
+                    <h3>Festivals & Celebrations</h3>
+                    <p>Learn about seasonal festivals, their significance, and ways to observe them.</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Sanatani Rituals. Preserving Sacred Traditions.</p>
+        <p>&copy; 2026 Sanatan Dharma — Timeless wisdom, living traditions.</p>
     </footer>
 
     <script src="app.js"></script>

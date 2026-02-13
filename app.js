@@ -42,10 +42,17 @@ class Router {
 const pages = {
     home: () => `
         <div class="page">
-            <div class="hero">
-                <h1>🕉️ Sanatani Rituals</h1>
-                <p>Explore the sacred traditions and timeless rituals of Sanatana Dharma. Connect with centuries of spiritual wisdom and sacred practices.</p>
-            </div>
+            <section class="hero">
+                <div class="hero-inner">
+                    <div class="hero-copy">
+                        <h1>Sanatan Dharma</h1>
+                        <p class="tagline">Timeless wisdom, living traditions — a guide to meaning and practice.</p>
+                    </div>
+                    <div class="hero-media">
+                        <img src="assets/images/gk_hero.png" alt="Sanatan Dharma" style="max-width:320px; width:100%; height:auto;">
+                    </div>
+                </div>
+            </section>
 
             <div class="section">
                 <h2>Spiritual Traditions</h2>
@@ -53,17 +60,17 @@ const pages = {
                     <div class="card">
                         <div class="card-icon">🙏</div>
                         <h3>Puja & Worship</h3>
-                        <p>Sacred rituals performed to honor the divine. Learn about different forms of worship and their significance in spiritual life.</p>
+                        <p>Sacred practices that honor the divine. Learn about different forms of worship and their significance in spiritual life.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">🔥</div>
                         <h3>Yagna & Fire Rituals</h3>
-                        <p>Ancient fire ceremonies that connect us to the cosmic forces. Understand the spiritual power of sacred fires.</p>
+                        <p>Fire ceremonies that connect us to cosmic forces and purify mind and environment.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">📿</div>
                         <h3>Meditation & Yoga</h3>
-                        <p>Paths to inner peace and self-realization. Discover practices that have enlightened sages for millennia.</p>
+                        <p>Practical techniques for inner peace, mindfulness, and self-realization.</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +81,7 @@ const pages = {
         <div class="page">
             <div class="hero">
                 <h1>🕉️ Sacred Rituals</h1>
-                <p>Detailed guide to the most important Sanatani rituals and their spiritual significance.</p>
+                <p>Detailed guide to the most important rituals and their spiritual significance.</p>
             </div>
 
             <div class="section">
@@ -160,8 +167,8 @@ const pages = {
     festivals: () => `
         <div class="page">
             <div class="hero">
-                <h1>🎉 Sacred Festivals</h1>
-                <p>Celebrate the divine through major Hindu festivals and their spiritual significance.</p>
+                <h1>🎉 Festivals & Celebrations</h1>
+                <p>Celebrate seasonal festivals and learn their deeper meanings.</p>
             </div>
 
             <div class="section">
@@ -203,7 +210,7 @@ const pages = {
     about: () => `
         <div class="page">
             <div class="hero">
-                <h1>About Sanatani Rituals</h1>
+                <h1>About Sanatan Dharma</h1>
                 <p>Understanding our sacred heritage and spiritual traditions.</p>
             </div>
 
@@ -251,7 +258,27 @@ const pages = {
 // Initialize Router
 const router = new Router();
 router.register('/', pages.home);
-router.register('/rituals', pages.rituals);
-router.register('/daily-practices', pages.daily);
+router.register('/teachings', pages.rituals);
+router.register('/practices', pages.daily);
 router.register('/festivals', pages.festivals);
 router.register('/about', pages.about);
+
+// Mobile navigation toggle
+function initNavToggle() {
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', initNavToggle);
