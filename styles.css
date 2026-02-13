@@ -43,12 +43,17 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--accent-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
 }
+
+.logo img { display: block; height: 36px; width: auto; }
 
 .nav-links {
     display: flex;
@@ -185,6 +190,9 @@ body {
     margin-right: 0.5rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+/* Ensure CTA buttons sit a bit below the tagline without affecting other pages */
+.hero-copy p:last-child { margin-top: 1.6rem; }
 
 .cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 .cta.secondary { background: transparent; border: 1px solid rgba(201,169,97,0.18); color: #f1e8dc; }
